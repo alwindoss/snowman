@@ -59,6 +59,7 @@ func main() {
 
 	// // Mount the admin sub-router
 	// r.Mount("/admin", adminRouter())
-
-	http.ListenAndServe(":3333", r)
+	addr := fmt.Sprintf(":%d", cfg.Port)
+	fmt.Printf("Listening on %s\n", addr)
+	http.ListenAndServe(addr, r)
 }
